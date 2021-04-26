@@ -24,7 +24,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: {{ include "emqx.fullname" $ }}
+          serviceName: {{ include "emqx.fullname" $ }}-management
           servicePort: {{ $.Values.service.dashboard }}
   {{- end -}}
   {{- if .Values.ingress.dashboard.tls }}
@@ -59,7 +59,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: {{ include "emqx.fullname" $ }}
+          serviceName: {{ include "emqx.fullname" $ }}-management
           servicePort: {{ $.Values.service.mgmt }}
   {{- end -}}
   {{- if .Values.ingress.mgmt.tls }}
